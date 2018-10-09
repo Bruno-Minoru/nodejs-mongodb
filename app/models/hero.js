@@ -11,6 +11,6 @@ const HeroSchema = new Schema({
   superPowers: {
     type: Array,
   },
-});
+}, { collection: 'Heroes'});
 
 module.exports = connection.model('Hero', HeroSchema);
