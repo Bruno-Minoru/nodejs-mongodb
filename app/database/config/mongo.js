@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const { user, password, host, port, database } = require('credentials');
 
 mongoose.Promise = Promise;
 
 const createConnection = () => {
-  const credentials = 'mongodb://:@localhost:27017/';
+  const credentials = `mongodb://${user}:${password}@${host}:${port}/${database}`;
   const connection = mongoose.createConnection(credentials, {
     socketTimeoutMS: 0,
     keepAlive: true,
