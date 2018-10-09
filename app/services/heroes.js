@@ -23,7 +23,7 @@ const post = (req) => {
 
 const destroy = (req) => {
   const { _id } = req.params;
-  return Hero.findByIdAndRemove(_id)
+  return Hero.findOneAndDelete(_id)
     .then(result => result);
 }
 
